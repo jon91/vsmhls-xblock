@@ -1,0 +1,8 @@
+*.pyc
+*~
+*.swp
+*.swo
+vsmhls_xblock.egg-info
+vsmhls_xblock.egg-info/*
+build/
+dist/

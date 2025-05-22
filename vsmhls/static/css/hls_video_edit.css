@@ -1,0 +1,134 @@
+/* Studio Editor CSS for HLS Video XBlock */
+.xblock-studio-settings {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+}
+
+.setting-item {
+    margin-bottom: 20px;
+}
+
+.setting-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.setting-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.setting-help {
+    margin-top: 5px;
+    color: #666;
+    font-size: 12px;
+}
+
+.checkbox-group {
+    margin-top: 10px;
+}
+
+.checkbox-item {
+    margin-bottom: 8px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Subtitle track styling */
+#subtitle-tracks-container {
+    margin-bottom: 10px;
+}
+
+.subtitle-track-item {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.track-inputs {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.track-inputs input {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.subtitle-url {
+    flex-basis: 60%;
+    flex-grow: 1;
+}
+
+.subtitle-lang {
+    flex-basis: 15%;
+    min-width: 80px;
+}
+
+.subtitle-label {
+    flex-basis: 20%;
+    min-width: 120px;
+}
+
+.remove-subtitle-track {
+    margin-left: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+
+/* Buttons */
+.button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#add-subtitle-track {
+    background-color: #f0f0f0;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.xblock-actions {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.xblock-actions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.action-item {
+    margin-right: 10px;
+}
+
+.action-primary {
+    background-color: #0075b4;
+    color: white;
+}
+
+.cancel-button {
+    background-color: transparent;
+    border: 1px solid #ccc;
+}

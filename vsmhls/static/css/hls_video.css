@@ -1,0 +1,79 @@
+.hls-video-xblock {
+    max-width: 100%;
+    margin: 0 auto;
+    /* padding: 10px; */
+}
+
+.video-js {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+/* Subtitle styling */
+.video-js .vjs-text-track-display {
+    pointer-events: none;
+}
+
+.video-js .vjs-text-track-cue {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 3px 8px;
+    border-radius: 2px;
+}
+
+/* AirPlay and Chromecast buttons */
+.vjs-airplay-button,
+.vjs-chromecast-button {
+    display: inline-block;
+}
+
+/* Buffering indicator */
+.vjs-loading-spinner {
+    border: 6px solid rgba(43, 51, 63, 0.7);
+    border-top-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: vjs-spinner-spin 1.5s linear infinite;
+}
+
+@keyframes vjs-spinner-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Prevents issues with the player in Open edX */
+.video-js .vjs-tech {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Control bar spacing */
+.video-js .vjs-control {
+    width: 3em;
+}
+
+.video-js .vjs-time-control {
+    min-width: 1em;
+    padding: 0;
+    font-size: 1em;
+}
+
+.video-js .vjs-play-progress {
+    background-color: #2b83da;
+}
+
+
+.vsmhls_block {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.video-js {
+    width: 100%;
+    height: auto;
+}
