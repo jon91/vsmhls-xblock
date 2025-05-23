@@ -81,6 +81,7 @@ class VSMHLSXBlock(XBlock):
         frag = Fragment(html)
         frag.add_css(self.resource_string("static/css/hls_video_edit.css"))
         frag.add_javascript(self.resource_string("static/js/hls_video_edit.js"))
+        frag.add_javascript(self.resource_string("static/js/player_init.js"))
         frag.initialize_js('VSMHLSXBlockStudio')
         return frag
     

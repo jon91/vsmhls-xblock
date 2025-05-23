@@ -1,7 +1,6 @@
 function VSMHLSXBlockStudio(runtime, element) {
-    // Save button: submit new settings.
+    // Bind the "Save" button click
     $(element).find('.save-button').bind('click', function() {
-        // Build the URL for the JSON handler "studio_submit"
         var handlerUrl = runtime.handlerUrl(element, 'studio_submit');
         var data = {
             xblock_display_name: $(element).find('#xblock_display_name').val(),
@@ -13,8 +12,7 @@ function VSMHLSXBlockStudio(runtime, element) {
             runtime.notify('save', {state: 'end'});
         });
     });
-
-    // Cancel button: close the edit view.
+    // Bind cancel event
     $(element).find('.cancel-button').bind('click', function() {
         runtime.notify('cancel', {});
     });
