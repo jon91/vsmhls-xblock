@@ -61,7 +61,7 @@ class VSMHLSXBlock(XBlock):
         frag.add_content(html)
         
         # Load external JS library and our initialization script
-        frag.add_javascript_url("https://video.vladschool.com/playerjs.js")
+        frag.add_javascript_url("https://video.vladschool.com/playerjs.js?nc")
         frag.add_javascript(self.resource_string("static/js/player_init.js"))
         
         frag.initialize_js('VSMHLSXBlock')
