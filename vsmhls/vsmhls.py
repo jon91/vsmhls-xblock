@@ -18,6 +18,10 @@ class VSMHLSXBlock(XBlock):
     """
     An XBlock providing a video player with HLS streaming capabilities using Video.js.
     """
+    completion_mode = 'excluded'
+
+
+
     # Fields
     hls_url = String(
         display_name="HLS Stream URL",
