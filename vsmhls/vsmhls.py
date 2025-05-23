@@ -72,10 +72,10 @@ class VSMHLSXBlock(XBlock):
         The studio view for editing the XBlock settings.
         """
         ctx = {
+            'xblock_display_name': getattr(self, 'xblock_display_name', 'My Video'),
             'hls_url': self.hls_url,
             'poster_url': self.poster_url,
-            'subtitle_urls': self.subtitle_urls,
-            # and potentially title if needed
+            # 'subtitle_urls': self.subtitle_urls,  # if needed; otherwise can be removed
         }
         html = loader.render_template("static/html/hls_video_edit.html", ctx)
         frag = Fragment(html)
@@ -105,13 +105,20 @@ class VSMHLSXBlock(XBlock):
         return {'result': 'success'}
 
     @XBlock.json_handler
-    def save_settings(self, data, suffix=''):
+    def studio_submit(self, data, suffix=''):
         """
-        Save the settings from the studio view.
+        Called when submitting the form in Studio.
         """
+        if not data.get('hls_url', '').startswith(('http://', 'https://')):
+            return {'result': 'error', 'message': 'Invalid HLS URL format'}
+            
+        if data.get('poster_url') and not data['poster_url'].startswith(('http://', 'https://')):
+            return {'result': 'error', 'message': 'Invalid poster URL format'}
+
+        self.xblock_display_name = data.get('xblock_display_name', '')
         self.hls_url = data.get('hls_url', '')
         self.poster_url = data.get('poster_url', '')
-        self.subtitle_urls = data.get('subtitle_urls', [])
+        # Add validation if needed.
         return {'result': 'success'}
 
     @staticmethod

@@ -1,33 +1,20 @@
 <div class="hls-video-xblock-edit">
     <h3>HLS Video Settings</h3>
     <div class="field">
-        <label for="xblock_display_name">HLS Stream URL:</label>
+        <label for="xblock_display_name">Block Display Name:</label>
         <input type="text" id="xblock_display_name" name="xblock_display_name" value="{{ xblock_display_name }}"
             class="field-input" />
     </div>
 
     <div class="field">
         <label for="hls-url">HLS Stream URL:</label>
-        <input type="text" id="hls-url" value="{hls_url}" class="field-input" />
+        <input type="text" id="hls-url" value="{{ hls_url }}" class="field-input" />
     </div>
     <div class="field">
         <label for="poster-url">Poster Image URL:</label>
-        <input type="text" id="poster-url" value="{poster_url}" class="field-input" />
+        <input type="text" id="poster-url" value="{{ poster_url }}" class="field-input" />
     </div>
-    <!-- <div class="field">
-        <label>Subtitles:</label>
-        <div id="subtitle-list">
-            {% for subtitle in subtitle_urls %}
-            <div class="subtitle-entry">
-                <input type="text" class="subtitle-url" value="{{ subtitle.url }}" placeholder="Subtitle URL" />
-                <input type="text" class="subtitle-lang" value="{{ subtitle.lang }}" placeholder="Language Code (e.g., en)" />
-                <input type="text" class="subtitle-label" value="{{ subtitle.label }}" placeholder="Label (e.g., English)" />
-                <button class="remove-subtitle">Remove</button>
-            </div>
-            {% endfor %}
-        </div>
-        <button id="add-subtitle">Add Subtitle</button>
-    </div> -->
+    <!-- Subtitle field omitted for brevity -->
     <div class="actions">
         <button class="save-button">Save</button>
         <button class="cancel-button">Cancel</button>
