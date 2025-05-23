@@ -1,6 +1,12 @@
 <div class="hls-video-xblock-edit">
     <h3>HLS Video Settings</h3>
     <div class="field">
+        <label for="xblock_display_name">HLS Stream URL:</label>
+        <input type="text" id="xblock_display_name" name="xblock_display_name" value="{{ xblock_display_name }}"
+            class="field-input" />
+    </div>
+
+    <div class="field">
         <label for="hls-url">HLS Stream URL:</label>
         <input type="text" id="hls-url" value="{hls_url}" class="field-input" />
     </div>
@@ -8,7 +14,7 @@
         <label for="poster-url">Poster Image URL:</label>
         <input type="text" id="poster-url" value="{poster_url}" class="field-input" />
     </div>
-    <div class="field">
+    <!-- <div class="field">
         <label>Subtitles:</label>
         <div id="subtitle-list">
             {% for subtitle in subtitle_urls %}
@@ -21,7 +27,7 @@
             {% endfor %}
         </div>
         <button id="add-subtitle">Add Subtitle</button>
-    </div>
+    </div> -->
     <div class="actions">
         <button class="save-button">Save</button>
         <button class="cancel-button">Cancel</button>

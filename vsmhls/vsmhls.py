@@ -52,17 +52,16 @@ class VSMHLSXBlock(XBlock):
         context = {
             'hls_url': self.hls_url,
             'poster_url': self.poster_url,
+            # Use a proper field for display name (if not set, fall back to a default)
+            'xblock_display_name': getattr(self, 'xblock_display_name', 'My Video'),
             'unique_id': str(self.scope_ids.usage_id)
         }
 
         html = loader.render_template('static/html/hls_video.html', context)
         frag.add_content(html)
-    
-        # Load the external Playerjs library
-        frag.add_javascript_url("https://video.vladschool.com/playerjs.js?nc")
-
         
-        # Load Playerjs from the hosted URL
+        # Load external JS library and our initialization script
+        frag.add_javascript_url("https://video.vladschool.com/playerjs.js")
         frag.add_javascript(self.resource_string("static/js/player_init.js"))
         
         frag.initialize_js('VSMHLSXBlock')
@@ -72,12 +71,14 @@ class VSMHLSXBlock(XBlock):
         """
         The studio view for editing the XBlock settings.
         """
-        html = self.resource_string("static/html/hls_video_edit.html")
-        frag = Fragment(html.format(
-            hls_url=self.hls_url,
-            poster_url=self.poster_url,
-            subtitle_urls=self.subtitle_urls
-        ))
+        ctx = {
+            'hls_url': self.hls_url,
+            'poster_url': self.poster_url,
+            'subtitle_urls': self.subtitle_urls,
+            # and potentially title if needed
+        }
+        html = loader.render_template("static/html/hls_video_edit.html", ctx)
+        frag = Fragment(html)
         frag.add_css(self.resource_string("static/css/hls_video_edit.css"))
         frag.add_javascript(self.resource_string("static/js/hls_video_edit.js"))
         frag.initialize_js('VSMHLSXBlockStudio')
